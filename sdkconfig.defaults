@@ -25,8 +25,11 @@ CONFIG_LV_DEF_REFR_PERIOD=20
 CONFIG_LV_FONT_MONTSERRAT_14=y
 CONFIG_LV_FONT_MONTSERRAT_20=y
 # LVGL 内置 malloc 池大小(KB)。它是独立静态区、不与系统堆共享,配大了会白白占用 RAM。
-# 本 demo UI 简单,24KB 足够;若自建复杂界面出现绘制卡死/看门狗,调大此值。
-CONFIG_LV_MEM_SIZE_KILOBYTES=24
+# 游戏盒同一时间只有一个游戏的界面。堆箱子一屏约 120 个对象(场景、塔、菜单、
+# 暂停/结算卡片),独立固件用 48KB;游戏盒还要在游戏画面上叠加退出确认框,
+# 而池子耗尽时 LVGL 会停在断言里(整机卡死),所以再留 16KB 余量。
+# 堆箱子进入时会在串口打印池使用率与最大空闲块,上机时据此核对。
+CONFIG_LV_MEM_SIZE_KILOBYTES=64
 
 # --- 系统 ---
 CONFIG_FREERTOS_HZ=1000

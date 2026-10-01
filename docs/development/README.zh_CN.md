@@ -23,6 +23,7 @@
 ## 工程约定（engineering）
 
 - [game-demo-to-device-acceptance.zh_CN.md](engineering/game-demo-to-device-acceptance.zh_CN.md)：共享 C/Wasm 游戏逻辑，先验收网页玩法，再验收真机表现。
+- [game-box.zh_CN.md](engineering/game-box.zh_CN.md)：游戏盒的平台结构、按键约定，以及把已有游戏接入合集的步骤。
 - [environment-setup.zh_CN.md](engineering/environment-setup.zh_CN.md)：AI 在全新机器上的环境引导，包含国际与中国大陆下载线路。
 - [build-and-test.zh_CN.md](engineering/build-and-test.zh_CN.md)：构建与验证（ESP-IDF 命令、逻辑测试、改动验证要求）。
 - [firmware-layout.zh_CN.md](engineering/firmware-layout.zh_CN.md)：默认/用户自定义分区布局与合并产物验证。
